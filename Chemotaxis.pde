@@ -77,7 +77,7 @@ class Bacteria
     }
     if (mouseX > myX && mouseY < myY)
     {
-      a = (int) (Math.random()*6);
+      a = (int) (Math.random()*3);
       if (a == 0)
       {
         myX++;
