@@ -3,7 +3,7 @@ Bacteria[] colony;
 void setup()
 {
   size (500,500);
-  colony = new Bacteria[200];
+  colony = new Bacteria[500];
   for (int a = 0; a < colony.length; a++)
   {
     colony[a] = new Bacteria();
@@ -35,60 +35,108 @@ class Bacteria
   void show()
   {
     fill(i,j,k);
-    ellipse(myX,myY, 10,10);
+    ellipse(myX,myY, 5,5);
   }
   void move()
   {
     if (mouseX > myX && mouseY > myY)
     {
-      a = (int) (Math.random()*2);
+      a = (int) (Math.random()*5);
       if (a == 0)
       {
-        myX++;
+        myX += 2;
       }
       if (a == 1)
       {
+        myY += 2;
+      }
+      if (a == 2)
+      {
+        myX++;
         myY++;
       }
-    }
-    if (mouseX < myX && mouseY < myY)
-    {
-      a = (int) (Math.random()*2);
-      if (a == 0)
+      if (a == 3)
       {
         myX--;
       }
-      if (a == 1)
+      if (a == 4)
       {
         myY--;
       }
     }
+    if (mouseX < myX && mouseY < myY)
+    {
+      a = (int) (Math.random()*5);
+      if (a == 0)
+      {
+        myX -= 2;
+      }
+      if (a == 1)
+      {
+        myY -= 2;
+      }
+      if (a == 2)
+      {
+        myX--;
+        myY--;
+      }
+      if (a == 3)
+      {
+        myX++;
+      }
+      if (a == 4)
+      {
+        myY++;
+      }
+    }
     if (mouseX < myX && mouseY > myY)
     {
-      a = (int) (Math.random()*2);
+      a = (int) (Math.random()*5);
       if (a == 0)
+      {
+        myX -= 2;
+      }
+      if (a == 1)
+      {
+        myY += 2;
+      }
+      if (a == 2)
+      {
+        myX--;
+        myY++;
+      }
+      if (a == 3)
       {
         myX--;
       }
-      if (a == 1)
+      if (a == 4)
       {
         myY++;
       }
     }
     if (mouseX > myX && mouseY < myY)
     {
-      a = (int) (Math.random()*3);
+      a = (int) (Math.random()*5);
       if (a == 0)
       {
-        myX++;
+        myX += 2;
       }
       if (a == 1)
       {
+        myY -= 2;
+      }
+      if (a == 2)
+      {
+        myX++;
         myY--;
       }
-      if (a == 2) //WIP
+      if (a == 3)
       {
-        
+        myX++;
+      }
+      if (a == 4)
+      {
+        myY--;
       }
     }
     else
