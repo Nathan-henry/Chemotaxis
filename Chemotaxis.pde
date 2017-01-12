@@ -169,11 +169,13 @@ class Bacteria
         myY--;
       }
     }
+    /*
     if (mouseY == myY && mouseX == myX)
     {
       myX = (int) (Math.random()*501);
       myY = (int) (Math.random()*501);
     }
+    */
     if (mouseX == myX);
     {
       a = (int) (Math.random()*2);
