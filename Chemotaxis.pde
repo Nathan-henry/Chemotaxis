@@ -12,12 +12,42 @@ void setup()
 
 void draw()
 {
+  int c; //Number for comparison of positions;
   fill(0);
   rect(0,0,500,500);
   for (int a = 0; a < colony.length; a++)
   {
     colony[a].move();
     colony[a].show();
+    /* This didn't work at all.
+    for (int b = 0; a < colony.length; a++)
+    {
+      if (colony[a].myX == colony[b].myX)
+      {
+        c = (int) (Math.random()*2);
+        if (a == 0)
+        {
+          colony[a].myX += 1;
+        }
+        if (a == 1)
+        {
+          colony[a].myX -= 1;
+        }
+      }
+      if (colony[a].myY == colony[b].myY)
+      {
+        c = (int) (Math.random()*2);
+        if (a == 0)
+        {
+          colony[a].myY += 1;
+        }
+        if (a == 1)
+        {
+          colony[a].myY -= 1;
+        }
+      }
+    }
+    */
   }
 }
 
@@ -123,7 +153,7 @@ class Bacteria
       }
       if (a == 1)
       {
-        myY -= 2;
+        myY += 2;
       }
       if (a == 2)
       {
@@ -139,24 +169,33 @@ class Bacteria
         myY--;
       }
     }
-    else
+    if (mouseY == myY && mouseX == myX)
     {
-      a = (int) (Math.random()*4);
+      myX = (int) (Math.random()*501);
+      myY = (int) (Math.random()*501);
+    }
+    if (mouseX == myX);
+    {
+      a = (int) (Math.random()*2);
       if (a == 0)
       {
-        myX += 2;
+      myX += 1;
       }
       if (a == 1)
       {
-        myX -= 2;
+        myX -= 1;
       }
-      if (a == 2)
+    }
+    if (mouseY == myY);
+    {
+      a = (int) (Math.random()*2);
+      if (a == 0)
       {
-        myY += 2;
+      myY += 1;
       }
-      if (a == 3)
+      if (a == 1)
       {
-        myY -= 2;
+        myY -= 1;
       }
     }
   }
